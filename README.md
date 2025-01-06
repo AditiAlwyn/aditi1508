@@ -183,3 +183,30 @@ struct ListNode* mergeTwoLists(struct ListNode* list1, struct ListNode* list2) {
 }
 
 
+int removeDuplicates(int* nums, int numsSize) {
+  int c=1;
+  for(int i=0;i<numsSize;i++){
+    if( nums[i]!=nums[c-1]){
+        nums[c]=nums[i];
+        c++;
+    }
+  }
+  return c;
+}
+
+
+int removeElement(int *nums, int numsSize, int val) {
+    int count = 0;
+
+    for (int i = 0; i < numsSize; i++)
+        if (nums[i] == val) 
+            count++;
+        else 
+            nums[i - count] = nums[i];
+    return (numsSize - count);
+}
+
+
+
+
+
